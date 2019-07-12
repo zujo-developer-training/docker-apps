@@ -1,12 +1,12 @@
 version: "3"
 
 services:
-  app:
-    container_name: docker-node-mongo
+  server:
+    container_name: server
     restart: always
-    build: .
+    build: server/
     ports:
-      - "3000:3000"
+      - "5000:5000"
     links:
       - mongo
   mongo:
@@ -14,3 +14,4 @@ services:
     image: mongo
     ports:
       - "27017:27017"
+   
